@@ -1,0 +1,42 @@
+<md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+        <md-button ui-sref="favSongs">
+            Go to list
+        </md-button>
+        <h2 flex md-truncate>Miscrianti Challenge</h2>
+    </div>
+</md-toolbar>
+<div flex layout layout-align="center center" layout-margin>
+    <div flex="50" layout>
+        <form name="homeCtrl.favSongsForm" class="my-form" flex layout-padding >
+            <div flex layout="column">
+                <md-input-container class="md-block">
+                    <label>Artist Name</label>
+                    <input type="text" ng-model="homeCtrl.song.artist" name="artist" required>
+                    <div ng-messages="homeCtrl.favSongsForm.artist.$error">
+                        <div ng-message="required">Who plays the song?</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Genre</label>
+                    <input type="text" ng-model="homeCtrl.song.genre" name="genre" required>
+                    <div ng-messages="homeCtrl.favSongsForm.genre.$error">
+                        <div ng-message="required">Which genre is it?</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Song title</label>
+                    <input type="text" ng-model="homeCtrl.song.title" name="title" required>
+                    <div ng-messages="homeCtrl.favSongsForm.genre.$error">
+                        <div ng-message="required">Which is the name of the song?</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div flex layout layout-align="end center">
+                <md-button class="md-accent" ng-click="homeCtrl.addSong()">
+                    Add song
+                </md-button>
+            </div>
+        </form>
+    </div>
+</div>
